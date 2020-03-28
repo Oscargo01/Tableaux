@@ -164,7 +164,16 @@ def clasifica_y_extiende(f):
         listaHojas.append(Inorder(f.right), Inorder(f.left))
     if h == '3alfa':
         listaHojas.append('-'+ Inorder(f.right.left),'-' + Inorder(f.right.right))
-	#global listaHojas
+    if h == '4alfa':
+        listaHojas.append(Inorder(f.right.left),'-' + Inorder(f.right.right))
+    if h == '1beta':
+        listaHojas.append('-'+ Inorder(f.right.left) + '-' + Inorder(f.right.right))
+    if h == '2beta':
+        listaHojas.append(Inorder(f.left), Inorder(f.right))
+    if h == '3beta':
+        listaHojas.append('-' + Inorder(f.left), Inorder(f.right))
+    
+    global listaHojas
 c = Tree('-', None, Tree('-', None, Tree('p', None, None)))
 h = Tree('Y',Tree('p', None, None), ('r', None, None))
 print(clasifica_y_extiende(h))
